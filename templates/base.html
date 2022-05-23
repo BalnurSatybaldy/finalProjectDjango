@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reg.css' %}">
+    {% block styles %}{% endblock %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  </head>
+  <body>
+    <div class="nav">
+  <div class="donate_btn">
+    <a href="/charity_list/?type=donation">Пожертвовать</a>
+  </div>
+
+  <div class="volunteer_btn">
+    <a href="/charity_list/?type=volunteering">Стать волонтером</a>
+  </div>
+
+      {% if request.user.is_authenticated %}
+
+      <div class="exit_btn">
+        <a href="{% url 'profile' %}">Профиль</a>
+        <a href="{% url 'logout' %}">Выйти</a>
+      </div>
+
+      {% else %}
+
+        <div class="reg_btns">
+    <a href="#log-zatemnenie" class="login_btn">Войти</a>
+    <a href="#reg-zatemnenie" class="reg_btn">Регистрация</a>
+  </div>
+
+      {% endif %}
+
+{% if not request.user.is_authenticated %}
+  <div id="log-zatemnenie">
+    <form method="post" action="{% url 'login' %}" id="login-form">
+      {% csrf_token %}
+      <div class="login-form-container">
+        <div class="form-fields">
+          <div class="form-field">
+            <input class="blocks" type="text" placeholder="Username" name="username" id="id-login-username">
+          </div>
+          <div class="form-field">
+            <input class="blocks" type="password" placeholder="Пароль" name="password" id="id-login-password">
+          </div>
+        </div>
+        <button class="reg_button" style="margin: 0px" type="submit">Войти</button>
+        <a href="#" class="close"><img src="{% static 'css/imgs/exit.png' %}" alt=""></a>
+      </div>
+    </form>
+  </div>
+
+  <div id="reg-zatemnenie">
+    <form method="post" action="{% url 'sign-up' %}" id="sign-up-form">
+      {% csrf_token %}
+      <div id="register-form-container">
+        <div class="form-fields">
+          <div class="form-field">
+            <input class="blocks" type="text" placeholder="Имя" name="first_name" id="id-sign-up-first-name">
+          </div>
+          <div class="form-field">
+            <input class="blocks" type="text" placeholder="Фамилия" name="last_name" id="id-sign-up-last-name">
+          </div>
+          <div class="form-field">
+            <input class="blocks" type="text" placeholder="Номер телефона" name="phone_number" id="id-sign-up-phone-number">
+          </div>
+          <div class="form-field">
+            <input class="blocks" type="text" placeholder="Username" name="username" id="id-sign-up-username">
+          </div>
+          <div class="form-field">
+            <input class="blocks" type="password" placeholder="Пароль" name="password1" id="id-sign-up-password1">
+          </div>
+          <div class="form-field">
+            <input class="blocks" type="password" placeholder="Повторите пароль" name="password2" id="id-sign-up-password2">
+          </div>
+        </div>
+        <div class="form-buttons">
+          <button class="reg_button" type="submit" style="margin: 0px">Регистрация</button>
+        </div>
+        <div class="rule">
+          <a href="#" class="close"><img src="{% static 'css/imgs/exit.png' %}" alt=""></a>
+        </div>
+      </div>
+    </form>
+  </div>
+      {% endif %}
+</div>
+    {% block body %}{% endblock %}
+
+  <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+body{
+  margin: 0;
+}
+
+.donate_cards{
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 0;
+}
+
+.donate_card{
+  padding: 30px;
+  border: 1px solid;
+  border-radius: 20px;
+  display: flex;
+  margin: 30px 0;
+}
+
+.donate_card img{
+  height: 200px;
+  border-radius: 10px;
+}
+
+.donate_info{
+  margin-left: 20px;
+}
+
+.donate_info h2{
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.donate_info p{
+  font-size: 18px;
+}
+
+.donate_info a{
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: purple;
+}

@@ -1,0 +1,77 @@
+body{
+  margin: 0;
+}
+
+.nav{
+  display: flex;
+  border-bottom: 1px solid;
+  height: 70px;
+  align-items: center;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  padding: 0 10px;
+}
+
+.nav a{
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: purple;
+  color: white;
+  font-size: 18px;
+}
+
+.donate_btn{
+  position: absolute;
+}
+
+.volunteer_btn{
+  /*width: 158px;*/
+  margin-left: 130px;
+  /*margin-right: auto;*/
+}
+
+.exit_btn{
+  position: absolute;
+  right: 10px;
+}
+
+.reg_btns{
+  position: absolute;
+  right: 10px;
+}
+
+.reg_btns a{
+  color: white;
+}
+
+.login_btn{
+  background-color: purple;
+  border: none;
+}
+
+.reg_btn{
+  background-color: purple;
+  border: none;
+}
+
+.text{
+  width: 800px;
+  text-align: center;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text h1{
+  font-size: 34px;
+}
+
+.text h3{
+  font-size: 22px;
+}
+
+.text p{
+  font-size: 18px;
+}

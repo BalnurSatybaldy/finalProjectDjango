@@ -1,0 +1,268 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Благотворительность
+{% endblock %}
+
+{% block styles %}
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+
+img{
+border: 0;
+}
+.header{
+width: 100%;
+min-width: 460px;
+max-width: 960px;
+margin: 0 auto 30px;
+padding: 30px 0 10px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+box-sizing: border-box;
+}
+
+
+.sqr{
+height: 300px;
+width: 300px;
+background: #FFDB89;
+}
+
+.main{
+width: 100%;
+min-width: 460px;
+max-width: 960px;
+margin: auto;
+flex: auto;
+box-sizing: border-box;
+}
+.box{
+font-size: 1.25rem;
+line-height: 1.5;
+margin: 0 0 40px -50px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+.box-base{
+margin-left: 50px;
+flex: 1 0 430px;
+}
+.box-side{
+margin-left: 50px;
+font: none;
+}
+.box-img{
+max-width: 100%;
+height: auto;
+}
+.content{
+margin-bottom: 30px;
+display: flex;
+flex-wrap: wrap;
+}
+.banners{
+flex: 1 1 200px;
+}
+.banner{
+background: #FFDB89;
+width: 100%;
+min-width: 100px;
+min-height: 200px;
+font-size: 3rem;
+color: #fff;
+margin: 0 0 30px 0;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.posts{
+margin: 0 0 30px 30px;
+flex: 1 1 200px;
+}
+.comments{
+margin: 0 0 30px 30px;
+flex: 1 1 200px;
+}
+.comment{
+display: flex;
+}
+.comment-side{
+padding-right: 20px;
+flex: none;
+}
+.comment-base{
+flex: auto;
+}
+.comment-avatar{
+background: #800080;
+width: 50px;
+height: 50px;
+}
+.footer{
+background: #FF3366;
+width: 100%;
+max-width: 960px;
+min-width: 460px;
+color: #fff;
+margin: auto;
+padding: 15px;
+box-sizing: border-box;
+}
+
+@media screen and  (max-width: 800px) {
+.banners{
+margin-left: -30px;
+display: flex;
+flex-basis: 100%;
+}
+.banner{
+margin-left: 30px;
+}
+.posts{
+margin-left: 0;
+}
+}
+@media screen and  (max-width: 600px) {
+.content{
+display: block;
+}
+.banners{
+margin: 0;
+display: block;
+}
+.banner{
+margin-left: 0;
+}
+.posts{
+margin: 0;
+}
+
+}
+</style>
+{% endblock %}
+
+
+{% block body %}
+<main class="main">
+<div class="box">
+<div class="box-base">
+<center><h1>О нашем фонде</h1></center>
+<p>Благотворительный фонд «Ниет» – это частная некоммерческая организация, которая была создана в целях реализации благотворительных программ и проектов, направленных на улучшение уровня жизни детей, которые находятся в трудной жизненной ситуации.
+
+Для оказания помощи через пожертвования граждан и организаций фондом была сформирована обширная база данных, включающая в себя список детей, которым необходима помощь.</p>
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+
+<div class="content">
+<div class="banners">
+<div class="banner"><img src="https://astanait.edu.kz/wp-content/uploads/2018/08/shutterstock_735267403.jpg" width="300" height="200" ></div>
+<div class="banner"><img src="https://blog.mint.com/wp-content/uploads/2020/11/15-Charitable-Acts-You-Can-Do-on-a-Budget-This-Holiday-Season-.jpeg" width="300" height="200" ></div>
+<div class="banner"><img src="https://imageio.forbes.com/specials-images/dam/imageserve/1148796710/0x0.jpg?format=jpg&width=1200" width="300" height="200" ></div>
+</div>
+<div class="posts"  id="posts">
+<div class="post">
+<h1>Помощь другим</h1>
+
+<p>Наш фонд оказывает помощь каждому нуждающемуся ребёнку вне зависимости от его пола, национальности, вероисповедания, состояния здоровья, образования или иных факторов. 
+</p>
+<p>-</p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+<div class="post">
+<h1>Конфиденциальность</h1>
+<p>В целях обеспечения безопасности, во избежание доступа к спискам детей лицам с преступными намерениями, в открытом доступе остаются только имя, возраст, данные о социальном положении ребёнка и его характеристика. </p>
+<p>-</p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+<div class="post">
+<h1>Прозрачность</h1>
+
+<p>Каждый человек или организация, осуществившие пожертвования, могут беспрепятственно связаться с нашими сотрудниками и получить полный отчет о движении внесённых ими денежных средств и переданной благотворительной помощи.</p>
+</div>
+</div>
+<div class="comments"  id="comments">
+<div class="comment">
+<div class="comment-side">
+<div class="comment-avatar">
+
+</div>
+</div>
+<div class="comment-base">
+<h1 class="comment-title">Как работает Ваша помощь</h1>
+<p>Перечисленные вами пожертвования (денежные средства) попадают к получателям помощи посредством сертификатов.</p>
+</div>
+</div>
+<div class="comment">
+<div class="comment-side">
+<div class="comment-avatar">
+
+</div>
+</div>
+<div class="comment-base">
+<h1 class="comment-title">Кому оказывается помощь</h1>
+<p>Дети, имеющее нарушение здоровья со стойким расстройством функций организма которое приводит к ограничению жизнедеятельности и необходимости их социальной защиты. </p>
+</div>
+</div>
+<div class="comment">
+<div class="comment-side">
+<div class="comment-avatar">
+
+</div>
+</div>
+<div class="comment-base">
+<h1 class="comment-title">Кто может оказать помощь</h1>
+<p>Внести пожертвование может любой желающий. </p>
+</div>
+</div>
+</div>
+</div>
+</main> 
+
+
+
+    <footer class="footer-distributed">
+
+      <div class="footer-right">
+
+        <a href="#"><i class="fa fa-cloud"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+
+      </div>
+
+      <div class="footer-left">
+
+        <p class="footer-links">
+          <a class="link-1" href="/">О фонде</a>
+
+          <a href="/charity_list/?type=donation">Пожертование</a>
+
+          <a href="/charity_list/?type=volunteering">Стать волонтёром</a>
+
+          {% if not request.user.is_authenticated %}
+          <a href="#log-zatemnenie">Войти</a>
+          <a href="#reg-zatemnenie">Регистрация</a>
+          {% endif %}
+
+        
+        </p>
+
+        <p>Designed by: Sarsenbayeva Dinara, Satybaldy Balnur</p>
+      </div>
+
+    </footer>
+{% endblock %}

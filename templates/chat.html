@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Чат
+{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/reg.css' %}">
+  <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="page">
+  <div class="container">
+    <div class="chat_info">
+      <h3>{{ charity_title }}</h3>
+      <p>{{ number_of_members }} участников</p>
+    </div>
+    <div class="messages">
+    </div>
+    <div class="send_form">
+      <div class="form">
+        <form action="{% url 'send_message' chat_pk %}">
+          <input type="text" placeholder="Отправить сообщение" name="message" required id="message_input">
+          <button type="submit"><img src="{% static 'css/imgs/send.png' %}" alt=""></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  let chat_pk = {{ chat_pk }};
+  let user_pk = {{ user_pk }};
+</script>
+<script src="{% static 'js/chat.js' %}"></script>
+{% endblock %}

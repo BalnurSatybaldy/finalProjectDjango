@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  {% if type == "donation" %}
+    Список пожертвовании
+  {% else %}
+    Волонтерства
+  {% endif %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/userProfile.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="page">
+  <div class="vertical_menu">
+    <div class="ava">
+      <img src="{% static 'css/imgs/user.png' %}" alt="">
+    </div>
+
+    <div class="user_infos">
+      <div class="info">
+        <p>Имя:</p><span>{{ request.user.first_name }}</span>
+      </div>
+      <div class="info">
+        <p>Фамилия:</p><span>{{ request.user.last_name }}</span>
+      </div>
+      <div class="info">
+        <p>Номер:</p><span>{{ request.user.volunteer.phone_number }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="form">
+      <h1>Дата:</h1>
+      <hr>
+
+      <ol>
+        {% for donation in request.user.donations.all %}
+          {% if donation.is_paid %}
+            <li>{{ donation.created_at }}</li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </div>
+    <div class="form">
+      <h1>Пожертвование:</h1>
+      <hr>
+
+      <ol>
+        {% for donation in request.user.donations.all %}
+          {% if donation.is_paid %}
+            <li>{{ donation.price }}$</li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </div>
+    <div class="form">
+      <h1>Благотворительность:</h1>
+      <hr>
+
+      <ol>
+        {% for donation in request.user.donations.all %}
+          {% if donation.is_paid %}
+            <li>{{ donation.charity.title }}</li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</div>
+{% endblock %}

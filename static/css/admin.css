@@ -1,0 +1,91 @@
+button{
+  cursor: pointer;
+}
+
+.main{
+  display: flex;
+  width: 90vh;
+  margin: 15vh auto;
+}
+
+.charity_id{
+  padding: 10px 20px;
+  box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.charity_id p{
+  margin: 5px 0;
+}
+
+.charity_names{
+  height: fit-content;
+  border-radius: 6px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.charity_name button{
+  width: 90%;
+  background-color: purple;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  margin: 10px 0;
+}
+
+.charity_info{
+  display: none;
+  width: 60vh;
+  margin-left: 50px;
+}
+
+.btns{
+  display: flex;
+}
+
+.change_btns{
+  display: flex;
+}
+
+.btn{
+  margin-right: 5px;
+  text-align: center;
+}
+
+.btn button{
+  padding: 5px 30px;
+  background-color: purple;
+  border-radius: 6px;
+  color: white;
+  border: none;
+}
+
+.card_id{
+  display: flex;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+.card_id p{
+  margin: 0 5px 0 0;
+}
+
+.inputs{
+  margin-bottom: 20px;
+}
+
+.input p{
+  margin-bottom: 0;
+}
+
+.input input{
+  width: 100%;
+}
+
+form{
+  display: none;
+}

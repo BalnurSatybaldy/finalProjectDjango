@@ -1,0 +1,212 @@
+.form-field input {
+    width: 406px;
+    height: 40px;
+    font-size: 18px;
+    border: 2px solid purple;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 5px;
+}
+
+#register-form-container {
+    width: 415px;
+    padding: 50px 20px;
+    border-radius: 15px;
+    position: fixed;
+    top: 100px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background: #fff;
+}
+
+#register-form-container a{
+    background: none;
+}
+
+.reg_button {
+    width: 100%;
+    font-weight: bold;
+    font-size: 14px;
+    height: 40px;
+    background: purple;
+    border-radius: 5px;
+    color:#fff;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+.form-field label {
+    border: 2px solid purple;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+    padding: 9px 5px;
+    font-weight: 300;
+    font-size: 17.5px;
+}
+
+.form-field {
+    margin-bottom: 13px;
+}
+
+.checked{
+  height: 25px;
+  cursor: pointer;
+}
+
+.rule-checkbox {
+  width: 30px;
+  margin-right: 10px;
+  display: flex;
+}
+
+.rule {
+  margin-top: 10px;
+  display: flex;
+}
+
+#reg-zatemnenie {
+   background: rgba(102, 102, 102, 0.95);
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: none;
+   z-index: 91;
+ }
+
+ #reg-zatemnenie:target {
+   display: block;
+ }
+
+ #log-zatemnenie {
+    background: rgba(102, 102, 102, 0.95);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 91;
+  }
+
+  #log-zatemnenie:target {
+    display: block;
+  }
+
+  .login-form-container {
+      max-width: 415px;
+      width: 100%;
+      height: 150px;
+      background: #FFFFFF;
+      border-radius: 15px;
+      position: fixed;
+      top: 100px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      padding: 50px 20px;
+  }
+
+  .login-form-container a{
+      background: none;
+  }
+
+  .close {
+    height: 25px;
+    cursor:pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    opacity: 0.8;
+  }
+
+  .close:hover {
+    opacity: 1;
+  }
+
+  .close img {
+    height: 25px;
+  }
+
+  #volunteer-form-container {
+      width: 415px;
+      padding: 50px 20px;
+      border-radius: 15px;
+      position: fixed;
+      top: 100px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      background: #fff;
+  }
+
+  #volunteer-form-container a{
+      background: none;
+  }
+
+  #vol-zatemnenie {
+     background: rgba(102, 102, 102, 0.95);
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     display: none;
+     z-index: 91;
+   }
+
+  #vol-zatemnenie:target {
+    display: block;
+  }
+
+  #donate-btn {
+    background: rgba(102, 102, 102, 0.95);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 6;
+  }
+
+  #donate-btn:target {
+    display: block;
+  }
+
+  .donate-container {
+    max-width: 450px;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 15px;
+    position: fixed;
+    top: 200px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    padding: 20px;
+    z-index: 99;
+  }
+
+  .donate-info p{
+    margin-bottom: 5px;
+  }
+
+  .donate-container input{
+    margin-bottom: 20px;
+    font-size: 17px;
+    width: 98%;
+  }
+
+  .donate-btn-container a {
+    text-decoration: none;
+    background-color: #0098a6;
+    color: white;
+    font-size: 20px;
+    padding: 5px 40px;
+    border-radius: 10px;
+  }

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  {% if type == "donation" %}
+    Список пожертвовании
+  {% else %}
+    Волонтерства
+  {% endif %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/volunteer.css' %}">
+<link rel="stylesheet" href="{% static 'css/donate.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<div class="donate_cards">
+  {% for charity in charity_list %}
+  <div class="donate_card">
+    <img src="{{ charity.poster.url }}" alt="">
+    <div class="donate_info">
+      <h2>{{ charity.title }}</h2>
+      <p>{{ charity.description }}</p>
+      {% if type == 'donation' %}
+      <b id="{{ charity.id }}_price">нужно {{ charity.needed_price }} тг
+        {% if charity.needed_price > charity.earned_price %}осталось: {{ charity.left_price }}
+        {% else %}собралось денег: {{ charity.earned_price }}
+        {% endif %}
+      </b>
+      <hr style="border-width: 0px">
+      <a href="#donate-btn" onclick="selectCharity({{charity.id}}, 'donation')">Пожертвовать</a>
+      {% else %}
+      <a href="#vol-zatemnenie" onclick="selectCharity({{charity.id}}, 'volunteering')">Стать волонтером</a>
+      {% endif %}
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'chat' charity.id %}">Открыть чат</a>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% if type == 'donation' %}
+<div id="donate-btn">
+<form method="post" id="donate-form">
+  {% csrf_token %}
+  <div class="donate-container">
+    <div class="donate-info">
+      <h2>О пользе благотворительности известно давно.</h2>
+      {% if not request.user.is_authenticated %}
+      <input type="text" name="first_name" placeholder="Имя" id="id_donation_first_name">
+      <input type="text" name="last_name" placeholder="Фамилия" id="id_donation_last_name">
+      <input type="text" name="phone_number" placeholder="Номер телефона" id="id_donation_phone_number">
+      {% endif %}
+      <b></b>
+      <input type="number" name="price" placeholder="Введите сумму пожертвования" id="id_donation_amount">
+    </div>
+    <div class="donate-btn-container">
+      <button class="reg_button" type="submit" style="margin: 0px">Пожертвовать</button>
+    </div>
+    <a href="#" class="close"><img src="{% static 'css/imgs/exit.png' %}" alt="exit"></a>
+  </div>
+</form>
+</div>
+{% else %}
+<div id="vol-zatemnenie">
+  <form method="post" id="volunteer-form">
+    {% csrf_token %}
+    <div id="volunteer-form-container">
+      <div class="form-fields">
+        {% if not request.user.is_authenticated %}
+        <div class="form-field">
+          <input class="blocks" type="text" placeholder="Имя" id="id_first_name">
+        </div>
+        <div class="form-field">
+          <input class="blocks" type="text" placeholder="Фамилия" id="id_last_name">
+        </div>
+        <div class="form-field" style="display: flex">
+          <label for="blocks">+7</label>
+          <input id="blocks" type="number" placeholder="Номер телефона" style="border-radius: 0 5px 5px 0;" class="phone_number">
+        </div>
+        {% endif %}
+      </div>
+      <div class="form-buttons">
+        <button class="reg_button" type="submit" style="margin: 0px">Участвовать в волонтерстве</button>
+      </div>
+      <div class="rule">
+        <a href="#" class="close"><img src="{% static 'css/imgs/exit.png' %}" alt=""></a>
+      </div>
+    </div>
+  </form>
+</div>
+{% endif %}
+<script src="{% static 'js/charity_request_submit.js' %}"></script>
+{% endblock %}
